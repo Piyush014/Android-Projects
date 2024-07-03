@@ -1,2 +1,0 @@
-This is my First Hello World App.
-This is a new Line.
