@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.pyush.a10_splash_screen"
+    namespace = "com.pyush.a11_bundle_passing"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.pyush.a10_splash_screen"
+        applicationId = "com.pyush.a11_bundle_passing"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
