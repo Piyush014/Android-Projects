@@ -2,6 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme._16_AutoCompleteTextView" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#09E3FF</item>
+        <item name="colorPrimaryDark">#09E3FF</item>
+        <item name="colorAccent">#09E3FF</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
