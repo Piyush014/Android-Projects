@@ -5,9 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".BlankFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello Blank Fragment" />
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/btnF"
+            android:text="Click Me!" />
+
+    </LinearLayout>
+
 
 </FrameLayout>

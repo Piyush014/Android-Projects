@@ -1,4 +1,4 @@
-package com.pyush.a03_activity_fragment_demo;
+package com.piyush.a23_activity_fragment_lifecycle;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "Piyush";
     Button btn;
 
     @Override

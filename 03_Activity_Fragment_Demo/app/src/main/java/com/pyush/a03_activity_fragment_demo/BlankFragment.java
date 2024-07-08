@@ -1,6 +1,7 @@
 package com.pyush.a03_activity_fragment_demo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.annotation.NonNull;
@@ -9,9 +10,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class BlankFragment extends Fragment {
 
+    Button btnF;
     private static final String TAG = "BlankFragment";
 
     public BlankFragment() {
@@ -30,6 +33,16 @@ public class BlankFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_blank, container, false);
         Log.e(TAG, "onCreateView");
+
+        btnF = v.findViewById(R.id.btnF);
+        btnF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return v;
     }
 

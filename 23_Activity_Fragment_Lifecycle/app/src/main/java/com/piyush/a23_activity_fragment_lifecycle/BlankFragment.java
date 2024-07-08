@@ -1,21 +1,22 @@
-package com.pyush.a03_activity_fragment_demo;
+package com.piyush.a23_activity_fragment_lifecycle;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 public class BlankFragment extends Fragment {
 
     Button btnF;
-    private static final String TAG = "BlankFragment";
+    private static final String TAG = "Demo";
 
     public BlankFragment() {
         // Required empty public constructor
