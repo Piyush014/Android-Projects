@@ -13,7 +13,6 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
     TextView primaryTV, secondaryTV;
-    Button acBtn, cBtn, brace1Btn, brace2Btn, sinBtn, cosBtn, tanBtn, logBtn, lnBtn, factBtn, squareBtn, sqRootBtn, invBtn, btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPoint, btnMul, btnSub, btnAdd, btnEqual, btnDiv, btnPie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,36 +21,38 @@ public class MainActivity extends AppCompatActivity {
 
         primaryTV = findViewById(R.id.idTVPrimary);
         secondaryTV = findViewById(R.id.idTVSecondary);
-        acBtn = findViewById(R.id.idBtnAc);
-        cBtn = findViewById(R.id.idBtnC);
-        brace1Btn = findViewById(R.id.idBtnBrac1);
-        brace2Btn = findViewById(R.id.idBtnBrac2);
-        sinBtn = findViewById(R.id.idBtnSin);
-        cosBtn = findViewById(R.id.idBtnCot);
-        tanBtn = findViewById(R.id.idBtnTan);
-        logBtn = findViewById(R.id.idBtnLog);
-        lnBtn = findViewById(R.id.idBtnLn);
-        factBtn = findViewById(R.id.idBtnfact);
-        squareBtn = findViewById(R.id.idBtnSquare);
-        sqRootBtn = findViewById(R.id.idBtnSqRoot);
-        invBtn = findViewById(R.id.idBtnInv);
-        btn0 = findViewById(R.id.idBtn0);
-        btn1 = findViewById(R.id.idBtn1);
-        btn2 = findViewById(R.id.idBtn2);
-        btn3 = findViewById(R.id.idBtn3);
-        btn4 = findViewById(R.id.idBtn4);
-        btn5 = findViewById(R.id.idBtn5);
-        btn6 = findViewById(R.id.idBtn6);
-        btn7 = findViewById(R.id.idBtn7);
-        btn8 = findViewById(R.id.idBtn8);
-        btn9 = findViewById(R.id.idBtn9);
-        btnPoint = findViewById(R.id.idBtnDot);
-        btnMul = findViewById(R.id.idBtnMul);
-        btnSub = findViewById(R.id.idBtnSub);
-        btnAdd = findViewById(R.id.idBtnAdd);
-        btnEqual = findViewById(R.id.idBtnEqual);
-        btnDiv = findViewById(R.id.idBtnDiv);
-        btnPie = findViewById(R.id.idBtnPie);
+
+        Button acBtn = findViewById(R.id.idBtnAc);
+        Button cBtn = findViewById(R.id.idBtnC);
+        Button brace1Btn = findViewById(R.id.idBtnBrac1);
+        Button brace2Btn = findViewById(R.id.idBtnBrac2);
+        Button sinBtn = findViewById(R.id.idBtnSin);
+        Button cosBtn = findViewById(R.id.idBtnCos);
+        Button tanBtn = findViewById(R.id.idBtnTan);
+        Button logBtn = findViewById(R.id.idBtnLog);
+        Button lnBtn = findViewById(R.id.idBtnLn);
+        Button factBtn = findViewById(R.id.idBtnfact);
+        Button squareBtn = findViewById(R.id.idBtnSquare);
+        Button sqRootBtn = findViewById(R.id.idBtnSqRoot);
+        Button invBtn = findViewById(R.id.idBtnInv);
+        Button btn0 = findViewById(R.id.idBtn0);
+        Button btn1 = findViewById(R.id.idBtn1);
+        Button btn2 = findViewById(R.id.idBtn2);
+        Button btn3 = findViewById(R.id.idBtn3);
+        Button btn4 = findViewById(R.id.idBtn4);
+        Button btn5 = findViewById(R.id.idBtn5);
+        Button btn6 = findViewById(R.id.idBtn6);
+        Button btn7 = findViewById(R.id.idBtn7);
+        Button btn8 = findViewById(R.id.idBtn8);
+        Button btn9 = findViewById(R.id.idBtn9);
+        Button btnPoint = findViewById(R.id.idBtnDot);
+        Button btnMul = findViewById(R.id.idBtnMul);
+        Button btnSub = findViewById(R.id.idBtnSub);
+        Button btnAdd = findViewById(R.id.idBtnAdd);
+        Button btnEqual = findViewById(R.id.idBtnEqual);
+        Button btnDiv = findViewById(R.id.idBtnDiv);
+        Button btnPie = findViewById(R.id.idBtnPie);
+        Button btnPerc = findViewById(R.id.idBtnPerc); // Percentage button
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -85,7 +86,12 @@ public class MainActivity extends AppCompatActivity {
         lnBtn.setOnClickListener(listener);
         squareBtn.setOnClickListener(listener);
         invBtn.setOnClickListener(listener);
-        btnPie.setOnClickListener(listener);
+        btnPie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                primaryTV.setText(primaryTV.getText().toString() + "π");
+            }
+        });
 
         // Special buttons that need custom handling
         acBtn.setOnClickListener(new View.OnClickListener() {
@@ -124,11 +130,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        invBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                primaryTV.setText("1/");
+            }
+        });
+
         btnEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String val = primaryTV.getText().toString();
-                String replacedStr = val.replace('×', '*').replace('÷', '/');
+                String replacedStr = val.replace('×', '*').replace('÷', '/')
+                        .replace("√(", "sqrt(").replace("x", "*").replace("π", String.valueOf(Math.PI));
                 try {
                     double result = eval(replacedStr);
                     DecimalFormat df = new DecimalFormat("#.####");
@@ -137,6 +151,18 @@ public class MainActivity extends AppCompatActivity {
                     primaryTV.setText("Error");
                 }
                 secondaryTV.setText(val);
+            }
+        });
+
+        // Percentage button click listener
+        btnPerc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String val = primaryTV.getText().toString();
+                if (!val.isEmpty()) {
+                    double value = Double.parseDouble(val) / 100;
+                    primaryTV.setText(String.valueOf(value));
+                }
             }
         });
     }
