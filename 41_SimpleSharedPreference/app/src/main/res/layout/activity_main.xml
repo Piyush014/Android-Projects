@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#FFAB40"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textStyle="bold"
+        android:text="Shared Preferences Demo"
+        android:textColor="@android:color/white"
+        android:paddingBottom="51sp"
+        android:textSize="24sp" />
+
+    <!--EditText to take the data from the user and save the data in SharedPreferences-->
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:textColor="@color/white"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Enter your Name"
+        android:padding="10dp" />
+
+    <!--EditText to take the data from the user and save the data in SharedPreferences-->
+    <EditText
+        android:id="@+id/edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_below="@+id/edit1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Enter your Surname"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="21sp"
+        android:paddingBottom="41sp"
+        android:paddingTop="21sp"
+        android:textColor="#FBFBFB"
+        android:text="TextView" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Combine name" />
+
+
+</LinearLayout>
