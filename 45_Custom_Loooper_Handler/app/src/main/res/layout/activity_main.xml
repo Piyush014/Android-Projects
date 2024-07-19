@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textSize="21sp"
+        android:gravity="center"
+        android:layout_marginBottom="11sp"
+        android:padding="7dp"
+        android:id="@+id/textViewThreadCount"
+        android:text="Thread Count"
+        />
+
+    <Button
+        android:id="@+id/buttonThreadStarter"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewThreadCount"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="134dp"
+        android:text="Start thread" />
+
+    <Button
+        android:id="@+id/buttonStopthread"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonThreadStarter"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="133dp"
+        android:text="End Thread" />
+</RelativeLayout>
